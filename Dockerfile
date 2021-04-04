@@ -3,7 +3,7 @@ FROM bezuglyr/mytesttask
 #RUN git clone https://github.com/BezuglyR/testingWeather.git /usr/src/app/
 RUN mkdir /usr/src/app
 
-WORKDIR /usr/src/app/
+WORKDIR /usr/src/app
 
 COPY . /
 
