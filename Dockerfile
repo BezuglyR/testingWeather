@@ -6,7 +6,7 @@ RUN sudo mkdir /usr/src/app
 ADD . /usr/src/app/
 WORKDIR /usr/src/app
 
-VOLUME /dev/shm
+VOLUME /dev/shm:/dev/shm
 EXPOSE 4444:4444
 EXPOSE 80:80
 EXPOSE 7900:7900
