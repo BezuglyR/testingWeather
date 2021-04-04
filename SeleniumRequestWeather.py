@@ -1,9 +1,15 @@
 from selenium import webdriver
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 from time import sleep
 from elasticsearch import Elasticsearch
 
 es = Elasticsearch()
-driver = webdriver.Chrome()
+
+chrome_options = Options()
+chrome_options.add_argument("--headless")
+chrome_options.add_argument('--no-sandbox')
+driver = webdriver.Chrome('/usr/bin/chromedriver', options=chrome_options)
 
 driver.get('https://sinoptik.ua/%D0%BF%D0%BE%D0%B3%D0%BE%D0%B4%D0%B0-%D0%BE%D0%B4%D0%B5%D1%81%D1%81%D0%B0')
 sleep(1)
