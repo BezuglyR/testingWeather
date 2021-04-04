@@ -14,7 +14,7 @@ EXPOSE 7900:7900
 RUN sudo apt update
 RUN pip3 install --no-cache-dir -r requirements.txt
 
-RUN sudo service elasticsearch start
+#RUN sudo service elasticsearch start
 
 ENTRYPOINT ["sudo", "service", "elasticsearch", "start"]
 
