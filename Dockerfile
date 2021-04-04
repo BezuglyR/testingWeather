@@ -7,8 +7,9 @@ ADD . /usr/src/app/
 WORKDIR /usr/src/app
 
 VOLUME /dev/shm
-EXPOSE 4444
-EXPOSE 80
+EXPOSE 4444:4444
+EXPOSE 80:80
+EXPOSE 7900:7900
 
 RUN sudo apt update
 RUN pip3 install --no-cache-dir -r requirements.txt
