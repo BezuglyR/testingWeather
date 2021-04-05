@@ -8,9 +8,10 @@ WORKDIR /usr/src/app
 
 VOLUME /dev/shm:/dev/shm
 EXPOSE 4444:4444
-EXPOSE 80:80
 EXPOSE 7900:7900
 EXPOSE 9200:9200
+
+RUN sudo sysctl -w vm.max_map_count=262144
 
 RUN sudo apt update
 RUN sudo pip3 install --no-cache-dir -r requirements.txt
