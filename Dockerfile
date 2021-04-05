@@ -7,6 +7,7 @@ ADD . /usr/src/app/
 WORKDIR /usr/src/app
 
 VOLUME /dev/shm:/dev/shm
+ENV discovery.type=single-node
 EXPOSE 4444:4444
 EXPOSE 7900:7900
 EXPOSE 9200:9200
