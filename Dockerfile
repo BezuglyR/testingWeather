@@ -14,6 +14,4 @@ EXPOSE 7900:7900
 RUN sudo apt update
 RUN sudo pip3 install --no-cache-dir -r requirements.txt
 
-#RUN sudo service elasticsearch start
-CMD python3 main.py
-ENTRYPOINT ["sudo", "service", "elasticsearch", "start"]
+ENTRYPOINT sudo service elasticsearch start && sudo python3 main.py
