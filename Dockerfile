@@ -15,4 +15,4 @@ EXPOSE 9200:9200
 RUN sudo apt update
 RUN sudo pip3 install --no-cache-dir -r requirements.txt
 
-ENTRYPOINT sudo service elasticsearch start && sudo apt update && sudo python3 main.py
+ENTRYPOINT sudo service elasticsearch start && sudo python3 main.py
