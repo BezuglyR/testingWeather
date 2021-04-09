@@ -13,7 +13,7 @@ RUN sudo apt-get update && sudo apt-get install elasticsearch
 RUN sudo sysctl -w vm.max_map_count=262144
 
 VOLUME /dev/shm:/dev/shm
-ENV "discovery.type=single-node"
+ENV discovery.type=single-node
 EXPOSE 4444:4444
 EXPOSE 7900:7900
 EXPOSE 9200:9200
