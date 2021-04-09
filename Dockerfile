@@ -10,7 +10,6 @@ RUN wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key
 RUN sudo apt-get install apt-transport-https
 RUN echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | sudo tee /etc/apt/sources.list.d/elastic-7.x.list
 RUN sudo apt-get update && sudo apt-get install elasticsearch
-RUN sudo sysctl -w vm.max_map_count=262144
 
 VOLUME /dev/shm:/dev/shm
 ENV discovery.type=single-node
@@ -21,4 +20,4 @@ EXPOSE 9300:9300
 
 RUN sudo pip3 install --no-cache-dir -r requirements.txt
 
-ENTRYPOINT sudo service elasticsearch start && sudo python3 main.py
+ENTRYPOINT sudo sysctl -w vm.max_map_count=262144 sudo service elasticsearch start && sudo python3 main.py
