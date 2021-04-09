@@ -10,7 +10,7 @@ RUN wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key
 RUN sudo apt-get install apt-transport-https
 RUN echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | sudo tee /etc/apt/sources.list.d/elastic-7.x.list
 RUN sudo apt-get update && sudo apt-get install elasticsearch
-RUN sudo apt install python3-pip
+RUN sudo apt install -y python3-pip
 
 VOLUME /dev/shm:/dev/shm
 ENV discovery.type=single-node
